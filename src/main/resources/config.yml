@@ -1,0 +1,122 @@
+#
+#        _       _                               _      _    _____ _  __
+#       / \   __| |_   ____ _ _ __   ___ ___  __| |    / \  |  ___| |/ /
+#      / _ \ / _` \ \ / / _` | '_ \ / __/ _ \/ _` |   / _ \ | |_  | ' /
+#     / ___ \ (_| |\ V / (_| | | | | (_|  __/ (_| |  / ___ \|  _| | . \
+#    /_/   \_\__,_| \_/ \__,_|_| |_|\___\___|\__,_| /_/   \_\_|   |_|\_\
+#
+#
+#   Version: ${version}
+#   Authors: Frosty, SebbaIndustries
+#   01000001 01100100 01110110 01100001 01101110 01100011 01100101 01100100 01000001 01000110 01001011
+#
+#   Copyright 2019-20 SebbaIndustries, Frosty
+#
+#   Licensed under the Apache License, Version 2.0 (the "License");
+#   you may not use this file except in compliance with the License.
+#   You may obtain a copy of the License at
+#
+#    http://www.apache.org/licenses/LICENSE-2.0
+#
+#   Unless required by applicable law or agreed to in writing, software
+#   distributed under the License is distributed on an "AS IS" BASIS,
+#   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+#   See the License for the specific language governing permissions and
+#   limitations under the License.
+#
+# ======================================================================================================== #
+customAction:
+  # Dictates weather a custom action should be used instead of kick
+  # If set to true the action will be executed instead of player kick
+  Enabled: false
+  # Action which will be executed instead of player kick
+  Action: "tp %player% arena"
+  # Permission required to execute the above action
+  # This permission needs to be set so the action can be executed for the above player
+  # as the only player available is the checked player itself
+  Permission: "essentials.tp.others"
+
+analysisSettings:
+  # X, Y, Z: Checks for a given radius of blocks around the player.
+  # x: 6, y: 5, z: 6; Is the plugins default radius (Going over the default radius can false flag players.)
+  # + 10 being highest value (Possibility of fake positives), 0 being lowest value (Smallest possible detection radius)
+  CheckRadius:
+    x: 6
+    y: 5
+    z: 6
+  # Points determine how many times a player can be flagged, for plugin to start inactive faze
+  # Points: 1-5
+  Points: 4
+  # Amount of time to pass before a player is kicked for inactivity
+  # Time is specified in seconds
+  Time: 30
+  # Determines how many players should be online in order for the plugin to start inactivity checks
+  InactivityKickAmount: 1
+  # Dictates when the user should be warned of inactivity
+  # Time is specified in seconds
+  WarnTimer:
+    - 25
+    - 28
+    - 29
+  # States how long the check on that player should be halted after it has run
+  PauseTimer: 60
+  # Dictates the interval of which the player's location should be updated
+  # Specified in seconds (Recommended amount is 15s)
+  LocationUpdate: 15
+
+title:
+  TitleMessage: '&cYou will be kicked in'
+  SubtitleMessage: '&f<time> &cseconds!'
+  FadeIn: 1
+  FadeOut: 1
+  Stay: 10
+
+# Here you can configure all of the plugins messages
+messages:
+  # No permission message
+  NoPermissionMessage: '&8[&dAFK&8] &7You do not have permission to execute this command!'
+  # Unknown command message
+  UnknownCommandMessage: '&8[&dAFK&8] &7Executed command does not exist!'
+  # Incorrect command usage message
+  CommandUsageMessage: '&8[&dAFK&8] &7Invalid usage! Use &f{usage}'
+  # Inactivity kick message
+  KickMessage: '&8[&dAFK&8] &7You have been kicked due to inactivity!'
+  # Inactivity broadcast kick message
+  BroadcastKickMessage: '&8[&bServer&8] &f<player> &7has been kicked due to inactivity!'
+  # Message sent to the user upon vanish
+  VanishMessage: '&8[&dAFK&8] &7You have now vanished!'
+  # Message sent to the user upon un-vanish
+  UnVanishMessage: '&8[&dAFK&8] &7You are no longer vanished!'
+  # Lists afk players
+  AfkPlayerList: '&8[&dAFK&8] &7Afk Players &8(&f<players>&8) : &f'
+  # Reload start message
+  ReloadStartMessage: '&8[&dAFK&8] &7Reloading plugin. Please wait!'
+  # Reload complete message
+  ReloadCompleteMessage: '&8[&dAFK&8] &7Plugin has been successfully reloaded!'
+  # Cleanup removed Message
+  CleanUpRemovedMessage: '&8[&dAFK&8] &7Removed &f<player> &7for inactivity!'
+  # Cleanup start message
+  CleanUpStartMessage: '&8[&dAFK&8] &7Afk Player cleanup has started!'
+  # Cleanup complete message
+  CleanUpCompleteMessage: '&8[&dAFK&8] &7Cleanup has purged &f<number> &7afk players!'
+  # Check player does not exist or is offline
+  InvalidCheckedPlayerMessage: '&8[&dAFK&8] &7Player &f<player> &7does not exist or is offline!'
+  # Player debug message sent up debug command execution
+  DebugMessage:
+    - '&8[&dAFK&8] &7Debugging Player &8: &f<player>'
+    - ''
+    - '&fStatus&8:'
+    - ' &8» &7Player Status&8: &f<status>'
+    - ' &8» &7Inactivity Timer&8: &f<time>s'
+    - ''
+    - ' &8» &7Current Players Status&8: &a<onlinePlayers>&8/&c<maxPlayers>'
+    - ''
+  # Help message sent upon help command execution
+  HelpMessage:
+    - '&8[&dAFK&8] &7Help Message'
+    - ''
+    - ' &8» &f/advancedafk reload &8♦ &7Reloads the plugin'
+    - ' &8» &f/advancedafk debug &8<&fplayer&8> ♦ &7Shows debug for specified player'
+    - ' &8» &f/advancedafk cleanup &8♦ &7Purges all afk players'
+    - ' &8» &f/advancedafk info &8♦ &7Displays info about the plugin'
+    - ''

@@ -1,0 +1,34 @@
+name: AdvancedAFKPlugin
+version: ${project.version}
+main: me.frosty.advancedafk.AdvancedAFKPlugin
+prefix: AFK
+authors: [Frosty, SebbaIndustries]
+description: An advanced AFK detection plugin with optimized workflow
+website: https://www.spigotmc.org/resources/advanced-afk.73461/
+
+
+permissions:
+  advancedafk.*:
+    description: Grants permission to all commands with the exception of .broadcast
+    default: op
+  advancedafk.ignore:
+    description: Premission to ignore the AFK kick
+    default: op
+  advancedafk.broadcast:
+    description: Permission to see which user gets kicked
+    default: op
+  advancedafk.list:
+    description: Permission to see afk list
+    default: op
+  advancedafk.reload:
+    description: Permission to reload the plugin
+    default: op
+  advancedafk.debug:
+    description: Permission to see specified player's data
+    default: op
+  advancedafk.cleanup:
+    description: Permission to kick all afk players
+    default: op
+  advancedafk.help:
+    description: Permission to see the help message
+    default: op
