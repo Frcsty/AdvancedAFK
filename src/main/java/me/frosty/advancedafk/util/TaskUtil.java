@@ -67,11 +67,8 @@ public class TaskUtil
 							ThreadAnalysis1.startAnalysis();
 						}
 
-						double[] tps = Bukkit.getTPS();
-						double currentTPS = tps[0];
-
 						// Kick and Warn user
-						if (Bukkit.getOnlinePlayers().size() >= utility.allowedOnlinePlayers || currentTPS <= 15)
+						if (Bukkit.getOnlinePlayers().size() >= utility.allowedOnlinePlayers)
 						{
 
 							if (!player.hasPermission("advancedafk.ignore") || !player.hasPermission("advancedafk.*"))
